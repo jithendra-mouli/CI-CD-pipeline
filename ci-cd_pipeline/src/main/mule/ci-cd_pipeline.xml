@@ -12,6 +12,9 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 		<http:listener doc:name="Listener" doc:id="f417891c-4f3a-42cf-87af-347a3fcff46b" config-ref="HTTP_Listener_config" path="/test"/>
 		<logger level="INFO" doc:name="First Logger" doc:id="1fb58270-632f-474b-a49d-07c10cd6d581" message="First Logger"/>
 		<set-payload value="HELLO" doc:name="Set Payload" doc:id="988a6310-034f-4ad7-a2d5-b330193b0194" />
+		<logger level="INFO" doc:name="Logger" doc:id="e227cc7d-0449-4b65-b0c7-9ef83079d4e6" />
+		<set-variable value="" doc:name="Set Variable" doc:id="9cc50bf8-bbb2-4905-88c4-5a3251e1e00f" variableName="HELLO"/>
+		<logger level="INFO" doc:name="Logger" doc:id="766fad7d-b38f-4555-b0a5-934cf2e79808" />
 		<logger level="INFO" doc:name="Last Logger" doc:id="17b50df2-100e-4345-b130-7e3def80792e" message="Last Logger"/>
 	</flow>
 </mule>
