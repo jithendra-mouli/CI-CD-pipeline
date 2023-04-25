@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="cbfe3f52-7976-4437-8c1c-622b7aaadde2" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="ci-cd_pipelineFlow" doc:id="ed94d5fb-950c-4db6-be8a-4c82d8522371" >
+		<http:listener doc:name="Listener" doc:id="f417891c-4f3a-42cf-87af-347a3fcff46b" config-ref="HTTP_Listener_config" path="/test"/>
+		<logger level="INFO" doc:name="First Logger" doc:id="1fb58270-632f-474b-a49d-07c10cd6d581" message="First Logger"/>
+		<set-payload value="HELLO" doc:name="Set Payload" doc:id="988a6310-034f-4ad7-a2d5-b330193b0194" />
+		<logger level="INFO" doc:name="Last Logger" doc:id="17b50df2-100e-4345-b130-7e3def80792e" message="Last Logger"/>
+	</flow>
+</mule>
